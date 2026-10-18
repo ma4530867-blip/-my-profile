@@ -1,24 +1,9 @@
-import os
-from flask import Flask, render_template_string
-
-app = Flask(__name__)
-
-
-MY_NAME = "mohamed and hassan"
-
-MY_BIO ="manger"
-MY_LINKS =[ https://t.me/Moham607080
-           ]
-    
-
-
-HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع {{ name }}</title>
+    <title>موقعي الشخصي</title>
     <!-- استيراد Bootstrap للتصميم السريع العريض -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
@@ -49,11 +34,6 @@ HTML_TEMPLATE = """
         .btn-custom:hover {
             transform: translateY(-3px);
         }
-        footer {
-            margin-top: 5px;
-            font-size: 0.9s;
-            color: #777;
-        }
     </style>
 </head>
 <body>
@@ -62,24 +42,21 @@ HTML_TEMPLATE = """
         <div class="row justify-content-center">
             <div class="col-md-6 profile-card">
                 <!-- اسمك -->
-                <h1 class="profile-name">{{ name }}</h1>
+                <h1 class="profile-name">mohamed and hassan</h1>
                 
-                <!-- نبذة عنك -->
-                <p class="lead mb-4">{{ bio }}</p>
+                <!-- النبذة التعريفية -->
+                <p class="lead mb-4">manger</p>
                 
                 <hr class="my-4">
-                class="btn btn-outline-success btn-custom"
-
-                <!-- روابط التواصل الاجتماعي -->
+                
                 <h5 class="mb-3">تواصل معي:</h5>
                 <div class="d-flex justify-content-center flex-wrap">
-                    {% for link in links %}
-                        <a href="{{ link.url }}" target="_blank" class="btn btn-outline-primary btn-custom">{{ link.name }}</a>
-                    {% endfor %}
+                    <!-- رابط التليغرام الخاص بك -->
+                    <a href="https://t.me" target="_blank" class="btn btn-outline-primary btn-custom">تليغرام</a>
                 </div>
                 
                 <footer class="mt-5">
-                    <p>© 2026 جميع الحقوق محفوظة لـ {{ mohamed and hossan }}</p>
+                    <p style="color: #777; font-size: 0.9rem;">© 2026 جميع الحقوق محفوظة لـ mohamed and hassan</p>
                 </footer>
             </div>
         </div>
@@ -88,11 +65,4 @@ HTML_TEMPLATE = """
     <script src="https://jsdelivr.net"></script>
 </body>
 </html>
-"""
-
-@app.route('/')
-def home():
-    return render_template_string(HTML_TEMPLATE, name=MY_NAME, bio=MY_BIO, links=MY_LINKS)
-
-if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=5000)
+='0.0.0.0', port=5000)
